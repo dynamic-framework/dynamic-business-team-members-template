@@ -275,7 +275,7 @@ export default function TeamMemberInformation() {
                             className="p-0"
                           />
                         </div>
-                        <div className="flex-grow-1 pt-1 pt-lg-4">
+                        <div className="flex-grow-1 pt-1 pt-lg-6">
                           <DInput
                             id="mobileCountryNumber"
                             placeholder={t('userForm.placeholder')}
