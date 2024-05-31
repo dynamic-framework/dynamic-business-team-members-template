@@ -41,13 +41,41 @@
           "webpack.config.js"
         ]
       }
+    ],
+    "jsx-a11y/control-has-associated-label": [
+      "error",
+      {
+        "ignoreElements": [
+          "audio",
+          "canvas",
+          "embed",
+          "input",
+          "textarea",
+          "tr",
+          "video",
+          "td"
+        ],
+        "ignoreRoles": [
+          "grid",
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "row",
+          "tablist",
+          "toolbar",
+          "tree",
+          "treegrid"
+        ],
+        "depth": 3
+      }
     ]
   },
   "overrides": [
     {
       "files": [
-        "*.ts",
-        "*.tsx"
+        "**/*.ts",
+        "**/*.tsx"
       ],
       "extends": [
         "airbnb-typescript",
@@ -55,13 +83,14 @@
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
       "rules": {
-        "@typescript-eslint/no-floating-promises": "off",
         "@typescript-eslint/no-misused-promises": [
           "error",
           {
             "checksVoidReturn": false
           }
         ],
+        "@typescript-eslint/no-floating-promises": "off",
+        "react/jsx-props-no-spreading": "off",
         "import/no-extraneous-dependencies": [
           "error",
           {

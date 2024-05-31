@@ -1,3 +1,116 @@
 {
-  "title": "Bienvenido a Dynamic Framework + React"
+  "title": "Team members",
+  "description": "Here you can create, reinvite, assign a role and set their status.",
+  "table": {
+    "name": "Name",
+    "role": "Role",
+    "id": "Id",
+    "lastLogin": "Last login",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "details": {
+    "username": "<bold>Username:</bold> <span>{value}</span>",
+    "role": "<bold>Role:</bold> <span>{value}</span>",
+    "name": "<bold>Name:</bold> <span>{value}</span>",
+    "status": "Status",
+    "idInformation": "ID information",
+    "idCountry": "<bold>ID issuing country:</bold> <span>{value}</span>",
+    "idType": "<bold>ID:</bold> <span>{value}</span>",
+    "idNumber": "<bold>ID number:</bold> <span>{value}</span>",
+    "contactInformation": "Contact information",
+    "email": "<bold>Email:</bold> <span>{value}</span>",
+    "mobile": "<bold>Mobile:</bold> <span>{value}</span>",
+    "activity": "Activity",
+    "lastLogin": "<bold>Last login:</bold> <span>{value}</span>",
+    "creationDate": "<bold>Creation date:</bold> <span>{value}</span>"
+  },
+  "modal": {
+    "changeUserStatus": {
+      "title": "Change status",
+      "label": "Select new status for this team member"
+    },
+    "noRoles": {
+      "title": "No roles exist",
+      "message": "You must create the role before creating a team member."
+    }
+  },
+  "offcanvas": {
+    "roleDetail": {
+      "title": "<bold>Role</bold>: {role}"
+    },
+    "otp": {
+      "title": "Enter your security code",
+      "message": "Do you have any comments to add?",
+      "commentLabel": "Comments",
+      "commentPlaceholder": "Provide additional information",
+      "otpLabel": "Enter your security code",
+      "otpHint": "Problems with your digital token? <a>Contact us.</a>"
+    }
+  },
+  "toast": {
+    "invitation": "Invitation sended.",
+    "changeRoleSuccess": "You have just {newStatus} a member of your team.",
+    "changeRoleError": "Error trying to update team member status.",
+    "userUpdateSuccess": "You have updated team member.",
+    "userUpdateError": "Error trying update team member.",
+    "userCreatedSuccess": "You have just added a new team member. You can edit this member using the actions function",
+    "userCreatedError": "Error trying create team member."
+  },
+  "steps": {
+    "role": "Role assignment",
+    "creation": "Team member information",
+    "overview": "Overview"
+  },
+  "overview": {
+    "title": "Team Member Summary"
+  },
+  "role": {
+    "title": "Role assignment",
+    "message": "Roles have the necessary access and permissions to operate within the site.",
+    "label": "Role"
+  },
+  "userForm": {
+    "titleEdit": "Edit",
+    "titleCreate": "Team member information",
+    "role": "Role",
+    "placeholder": "Enter info",
+    "name": "Name",
+    "primaryLastName": "Last name",
+    "secondaryLastName": "Secondary last name",
+    "email": "Email",
+    "mobile": "Mobile",
+    "username": "Username",
+    "usernamePlaceholder": "Assign an username",
+    "idCountry": "ID issuing country",
+    "idType": "ID type",
+    "idNumber": "ID number",
+    "placeholderCountries": "Select a country",
+    "placeholderIdentifications": "Select an identification type",
+    "validationUsername": "Not valid. Min 4 characters. Letters, numbers and \"_\" are available. i.e. mary_smith",
+    "selectValidOption": "Select a valid option",
+    "completeField": "Complete required field"
+  },
+  "actions": {
+    "addTeamMember": "Add team member",
+    "goDetail": "Go to detail",
+    "send": "Send invitation",
+    "disable": "Disable",
+    "enable": "Enable",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "return": "Return",
+    "back": "Back",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "confirm": "Confirm",
+    "confirmChanges": "Confirm changes",
+    "seeActivityDetails": "See activity details",
+    "viewPermissions": "View permissions for this role",
+    "createRole": "Create a role",
+    "loading": "Loading...",
+    "changeStatus": "Change status",
+    "assignToken": "Assign token"
+  }
 }

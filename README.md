@@ -1,4 +1,4 @@
-# dynamic-react-base-template
+# dynamic-business-team-members-template
 ## Requirements:
 - node@20+
 - npm@10+
@@ -8,7 +8,7 @@
 The best way to install this template is using the [modyo-cli](https://docs.modyo.com/en/platform/channels/cli.html)
 
 ```console
-npx @modyo/cli@latest get dynamic-react-base-template my-project
+npx @modyo/cli@latest get dynamic-business-team-members-template my-project
 cd my-project
 npm i
 npm run start

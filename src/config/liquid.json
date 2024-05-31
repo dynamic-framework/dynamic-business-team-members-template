@@ -9,7 +9,11 @@
     "currency-precision": 2,
     "currency-separator": ".",
     "currency-decimal": ",",
-    "dashboard-path": "#",
-    "other-var": "Some value"
+
+    "mock-team-members": "true",
+    "mock-permissions": "true",
+
+    "format-date": "dd/MM/yyyy",
+    "format-date-full": "dd/MM/yyyy hh:mm a"
   }
 }

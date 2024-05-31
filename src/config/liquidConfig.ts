@@ -1,4 +1,4 @@
-import liquidParser from '../utils/liquidParser';
+import { liquidParser } from '@modyo-dynamic/modyo-service-business';
 
 import liquidConfig from './liquid.json';
 

@@ -1,11 +1,69 @@
-@import "@dynamic-framework/ui-react/src/style/abstracts/+import";
+@import "~@dynamic-framework/ui-react/src/style/abstracts/+import";
 
-.widget-name {
-  background-color: rgb(var(--#{$prefix}secondary-soft-rgb));
+.team-members,
+.d-portal {
+  .offcanvas {
+    --#{$prefix}offcanvas-width: 100%;
 
-  /* Add here your own styles only for this widget */
+    @include media-breakpoint-up(lg) {
+      --#{$prefix}offcanvas-width: 45%;
+    }
+  }
 
-  .text-muted {
-    word-break: break-all;
+  table {
+    table-layout: auto;
+
+    tr {
+      background-color: var(--#{$prefix}white);
+      transition: .3s;
+
+      &:hover {
+        background-color: var(--#{$prefix}gray-200);
+      }
+    }
+  }
+
+  .table-actions {
+    border-color: var(--#{$prefix}primary-200);
+
+    .btn {
+      display: inline-flex;
+      justify-content: start;
+    }
+  }
+
+  .btn-link-secondary span {
+    text-decoration: none;
+  }
+
+  .border-dashed {
+    border-style: dashed;
+    border-top-width: 2px;
+  }
+
+  .collapse-user {
+    box-shadow: none;
+    --#{$prefix}collapse-bg: transparent;
+
+    .collapse-body {
+      padding-block: 0;
+    }
+
+    .collapse-button,
+    .row {
+      border-bottom: 1px solid var(--#{$prefix}gray-300);
+    }
+
+    .collapse-button {
+      background-color: transparent;
+    }
+
+    &:last-child:not(:has(.collapse-body)) .collapse-button {
+      border-bottom: 0;
+    }
+  }
+
+  p {
+    margin: 0;
   }
 }
