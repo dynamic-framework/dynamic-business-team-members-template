@@ -1,10 +1,10 @@
-import { CountryRepository } from '@modyo-dynamic/modyo-service-business';
 import { useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getCountries } from '../../store/selectors';
 import { setCountries } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { CountryRepository } from '../repositories';
 
 export default function useCountriesEffect() {
   const dispatch = useAppDispatch();

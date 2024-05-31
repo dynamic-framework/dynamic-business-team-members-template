@@ -1,4 +1,5 @@
-import { User, UserStatus, liquidParser } from '@modyo-dynamic/modyo-service-business';
+import { User, UserStatus } from '../services';
+import liquidParser from '../utils/liquid-parser';
 
 export const SITE_LANG = liquidParser.parse('{{site.language}}');
 

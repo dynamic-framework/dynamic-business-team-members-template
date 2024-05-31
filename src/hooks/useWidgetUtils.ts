@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useFormatCurrency } from '@dynamic-framework/ui-react';
-import { ROLE } from '@modyo-dynamic/modyo-service-business';
 import { DateTime } from 'luxon';
 import { useCallback } from 'react';
 
@@ -12,6 +11,7 @@ import {
   SitePath,
   SITE_PATH,
 } from '../config/widgetConfig';
+import { ROLE } from '../services';
 
 export default function useWidgetUtils() {
   const { format } = useFormatCurrency();

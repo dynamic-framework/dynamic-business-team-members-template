@@ -6,12 +6,6 @@ import {
   DInputSelect,
   DInputSwitch,
 } from '@dynamic-framework/ui-react';
-import {
-  UserCountry,
-  UserRequest,
-  UserIdentificationType,
-  ApiCountryPhone,
-} from '@modyo-dynamic/modyo-service-business';
 import { useFormik } from 'formik';
 import { t } from 'i18next';
 import {
@@ -22,6 +16,12 @@ import {
 import * as yup from 'yup';
 
 import useWidgetUtils from '../hooks/useWidgetUtils';
+import {
+  UserCountry,
+  UserRequest,
+  UserIdentificationType,
+  ApiCountryPhone,
+} from '../services';
 import useIdentificationsCallback from '../services/hooks/useIdentificationsCallback';
 import {
   useAppDispatch,
@@ -186,7 +186,6 @@ export default function TeamMemberInformation() {
                       <DInput
                         id="username"
                         label={t('userForm.username')}
-                        labelIcon="info-circle"
                         placeholder={t('userForm.usernamePlaceholder')}
                         name="username"
                         value={values.username}

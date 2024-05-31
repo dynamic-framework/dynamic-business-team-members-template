@@ -1,11 +1,3 @@
-import {
-  ApiCountryPhone,
-  User,
-  UserCountry,
-  UserIdentificationType,
-  UserRequest,
-  UserRole,
-} from '@modyo-dynamic/modyo-service-business';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { t } from 'i18next';
 
@@ -14,6 +6,14 @@ import {
   UpdateUserStatus,
   WidgetStep,
 } from '../config/widgetConfig';
+import {
+  ApiCountryPhone,
+  User,
+  UserCountry,
+  UserIdentificationType,
+  UserRequest,
+  UserRole,
+} from '../services';
 
 export type WidgetState = {
   users: Array<User>;

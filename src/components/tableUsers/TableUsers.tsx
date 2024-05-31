@@ -1,4 +1,3 @@
-import { User } from '@modyo-dynamic/modyo-service-business';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
@@ -7,6 +6,7 @@ import {
   useTable,
 } from 'react-table';
 
+import { User } from '../../services';
 import useUsersEffect from '../../services/hooks/useUsersEffect';
 
 import TablePaymentDetailHeader from './TableUsersHeader';

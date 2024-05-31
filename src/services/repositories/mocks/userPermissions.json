@@ -1,0 +1,34 @@
+{
+  "user": {
+    "username": "oliver_brown",
+    "full_name": "Oliver Brown"
+  },
+  "role": {
+    "role": "administrator",
+    "role_name": "Administrator"
+  },
+  "permissions": [
+    "READ_SELF_PERMISSIONS",
+    "PAYROLL_PAYMENTS_ACTION",
+    "CREATE_PAYROLL_PAYMENTS_ACTION",
+    "AUTHORIZE_PAYROLL_PAYMENTS_ACTION",
+    "TRANSFERS_ACTION",
+    "ACCOUNTS_ACTION",
+    "CHECKING_ACCOUNTS_ACTION",
+    "SAVINGS_ACCOUNTS_ACTION",
+    "CREDIT_CARD_ACCOUNTS_ACTION",
+    "LOAN_ACCOUNTS_ACTION",
+    "TEAM_ACTION",
+    "USERS_ACTION",
+    "CREATE_USER_ACTION",
+    "UPDATE_USER_ACTION",
+    "UPDATE_USER_ROLE_ACTION",
+    "UPDATE_USER_STATUS_ACTION",
+    "ROLES_ACTION",
+    "CREATE_ROLE_ACTION",
+    "UPDATE_ROLE_ACTION",
+    "DUPLICATE_ROLE_ACTION",
+    "GRANT_PERMISSION_ACTION",
+    "REVOKE_PERMISSION_ACTION"
+  ]
+}

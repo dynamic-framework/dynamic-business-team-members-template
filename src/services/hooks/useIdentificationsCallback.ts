@@ -1,10 +1,10 @@
-import { IdentificationRepository } from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getIdentifications } from '../../store/selectors';
 import { setIdentifications } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { IdentificationRepository } from '../repositories';
 
 export default function useIdentificationsCallback() {
   const dispatch = useAppDispatch();

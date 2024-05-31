@@ -1,8 +1,8 @@
 import { DChip, DCollapse } from '@dynamic-framework/ui-react';
-import { USER_STATUS_COLOR, User, UserStatusColor } from '@modyo-dynamic/modyo-service-business';
 import { useTranslation } from 'react-i18next';
 
 import useWidgetUtils from '../hooks/useWidgetUtils';
+import { USER_STATUS_COLOR, User, UserStatusColor } from '../services';
 
 import TableUsersActions from './tableUsers/TableUsersActions';
 import TableUsersRoleDetail from './tableUsers/TableUsersRoleDetail';

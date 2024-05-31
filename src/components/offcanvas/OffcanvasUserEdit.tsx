@@ -6,11 +6,6 @@ import {
   PortalProps,
   useDPortalContext,
 } from '@dynamic-framework/ui-react';
-import {
-  ApiCountryPhone,
-  UserRole,
-  UserUpdate,
-} from '@modyo-dynamic/modyo-service-business';
 import { useFormik } from 'formik';
 import { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -18,6 +13,11 @@ import * as yup from 'yup';
 
 import { AvailablePortal } from '../../config/widgetConfig';
 import useWidgetUtils from '../../hooks/useWidgetUtils';
+import {
+  ApiCountryPhone,
+  UserRole,
+  UserUpdate,
+} from '../../services';
 import useUserUpdateCallback from '../../services/hooks/useUserUpdateCallback';
 import { useAppSelector } from '../../store/hooks';
 import { getCountriesPhone, getRoles } from '../../store/selectors';

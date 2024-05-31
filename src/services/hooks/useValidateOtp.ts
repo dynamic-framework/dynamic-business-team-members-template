@@ -1,5 +1,4 @@
 import { useDToast } from '@dynamic-framework/ui-react';
-import { UserRepository } from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -8,7 +7,8 @@ import { useAppSelector } from '../../store/hooks';
 import { getRequestUser } from '../../store/selectors';
 import { clearCreationProcess } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
-import apiUserRequestMapper from '../utils/apiRequestUserMapper';
+import apiUserRequestMapper from '../mappers/apiRequestUserMapper';
+import { UserRepository } from '../repositories';
 
 export default function useValidateOtp() {
   const [loading, setLoading] = useState(false);

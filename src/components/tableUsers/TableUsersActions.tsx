@@ -6,11 +6,11 @@ import {
   useDPortalContext,
   useDToast,
 } from '@dynamic-framework/ui-react';
-import { User } from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AvailablePortal } from '../../config/widgetConfig';
+import { User } from '../../services';
 import usePermissions from '../../utils/usePermission';
 
 type Props = {

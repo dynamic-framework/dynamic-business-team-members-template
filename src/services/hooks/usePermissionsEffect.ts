@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import { UserRepository } from '@modyo-dynamic/modyo-service-business';
 import { useEffect } from 'react';
 
 import { useAppDispatch } from '../../store/hooks';
 import { setPermissions, setWidgetStep } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { UserRepository } from '../repositories';
 
 export default function usePermissionsEffect() {
   const dispatch = useAppDispatch();
