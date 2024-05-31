@@ -6,12 +6,10 @@ import { useCallback } from 'react';
 import {
   FORMAT_DATE,
   FORMAT_DATE_FULL,
-  USER_ROLE,
   SITE_URL,
   SitePath,
   SITE_PATH,
 } from '../config/widgetConfig';
-import { ROLE } from '../services';
 
 export default function useWidgetUtils() {
   const { format } = useFormatCurrency();
@@ -36,10 +34,6 @@ export default function useWidgetUtils() {
     window.location.href = `${SITE_URL}/${SITE_PATH[path]}`;
   }, []);
 
-  const isRole = (
-    role: ROLE,
-  ) => USER_ROLE === role;
-
   const unicodeToEmoji = useCallback((unicodeSequence: string) => {
     if (unicodeSequence) {
       const unicodeCodes = unicodeSequence.split(' ').map((code) => parseInt(code.replace('U+', ''), 16));
@@ -55,7 +49,6 @@ export default function useWidgetUtils() {
     formatCurrency,
     formatDate,
     navigateTo,
-    isRole,
     unicodeToEmoji,
   };
 }

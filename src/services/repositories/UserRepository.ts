@@ -1,6 +1,5 @@
 import type { GenericAbortSignal } from 'axios';
 
-import liquidParser from '../../utils/liquid-parser';
 import {
   ApiUser,
   ApiUserPermissions,
@@ -8,29 +7,15 @@ import {
   ApiUserUpdate,
 } from '../api-interface';
 import ApiClient from '../clients/apiClient';
-import { User } from '../interface';
 import userItemMapper from '../mappers/userItemMapper';
 import userMapper from '../mappers/userMapper';
 import userPermissionsMapper from '../mappers/userPermissionsMapper';
-
-import userMock from './mocks/user.json';
-import usersMock from './mocks/userList.json';
-import userPermissionsMock from './mocks/userPermissions.json';
 
 export async function list(
   per_page: number,
   page: number,
   config?: { abortSignal: GenericAbortSignal },
 ) {
-  if (liquidParser.parse('{{vars.mock-team-members}}') === 'true') {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(0);
-      }, 1000);
-    });
-    return usersMock.map<User>((item) => userItemMapper(item));
-  }
-
   const { data } = await ApiClient.request<Array<ApiUser>>({
     url: '/users',
     method: 'GET',
@@ -48,15 +33,6 @@ export async function get(
   username: string,
   config?: { abortSignal: GenericAbortSignal },
 ) {
-  if (liquidParser.parse('{{vars.mock-team-members}}') === 'true') {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(0);
-      }, 1000);
-    });
-    return userMapper(userMock);
-  }
-
   const { data } = await ApiClient.request<ApiUser>({
     url: `/users/${username}`,
     method: 'GET',
@@ -70,17 +46,8 @@ export async function create(
   user: ApiUserRequest,
   config?: { abortSignal: GenericAbortSignal },
 ) {
-  if (liquidParser.parse('{{vars.mock-team-members}}') === 'true') {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(0);
-      }, 1000);
-    });
-    return;
-  }
-
   await ApiClient.request<ApiUser>({
-    url: '/users',
+    url: '/user',
     method: 'POST',
     signal: config?.abortSignal,
     data: user,
@@ -92,15 +59,6 @@ export async function update(
   user: ApiUserUpdate,
   config?: { abortSignal: GenericAbortSignal },
 ) {
-  if (liquidParser.parse('{{vars.mock-team-members}}') === 'true') {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(0);
-      }, 1000);
-    });
-    return;
-  }
-
   await ApiClient.request({
     url: `/users/${username}`,
     method: 'PUT',
@@ -114,15 +72,6 @@ export async function changeRole(
   role: string,
   config?: { abortSignal: GenericAbortSignal },
 ) {
-  if (liquidParser.parse('{{vars.mock-team-members}}') === 'true') {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(0);
-      }, 1000);
-    });
-    return;
-  }
-
   await ApiClient.request({
     url: `/users/${username}/role`,
     method: 'PUT',
@@ -138,15 +87,6 @@ export async function changeStatus(
   status: string,
   config?: { abortSignal: GenericAbortSignal },
 ) {
-  if (liquidParser.parse('{{vars.mock-team-members}}') === 'true') {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(0);
-      }, 1000);
-    });
-    return;
-  }
-
   await ApiClient.request({
     url: `/users/${username}/status`,
     method: 'PUT',
@@ -158,25 +98,26 @@ export async function changeStatus(
 }
 
 export async function permissions(
-  props?: {
+  params?: {
     config?: {
       abortSignal: GenericAbortSignal,
     },
   },
 ) {
-  if (liquidParser.parse('{{vars.mock-permissions}}') === 'true') {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(0);
-      }, 1000);
-    });
-    return userPermissionsMapper(userPermissionsMock);
-  }
+  const ROLE_AS = {
+    admin: 'ADMIN_PERMISSIONS',
+    authorizer: 'AUTHORIZER_PERMISSIONS',
+    operator: 'OPERATOR_PERMISSIONS',
+  };
 
   const { data } = await ApiClient.request<ApiUserPermissions>({
     url: '/user-permissions',
     method: 'GET',
-    signal: props?.config?.abortSignal,
+    signal: params?.config?.abortSignal,
+    // These headers are for obtaining different permissions from the stoplight examples.
+    headers: {
+      Prefer: `code=200, example=${ROLE_AS.admin}`,
+    },
   });
 
   return userPermissionsMapper(data);

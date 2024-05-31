@@ -2,6 +2,7 @@ import { User, UserStatus } from '../services';
 import liquidParser from '../utils/liquid-parser';
 
 export const SITE_LANG = liquidParser.parse('{{site.language}}');
+export const SITE_URL = liquidParser.parse('{{site.url}}');
 
 export const VARS_CURRENCY = {
   symbol: liquidParser.parse('{{vars.currency-symbol}}'),
@@ -10,18 +11,12 @@ export const VARS_CURRENCY = {
   decimal: liquidParser.parse('{{vars.currency-decimal}}'),
 };
 
-// URL
-export const SITE_URL = liquidParser.parse('{{site.url}}');
-
 // PATHs
 export const SITE_PATH = {
   DASHBOARD: liquidParser.parse('{{vars.path-dashboard}}'),
   MASS_PAYMENTS_QUERY: liquidParser.parse('{{vars.path-mass-payments-query}}'),
   MASS_PAYMENTS: liquidParser.parse('{{vars.path-mass-payments}}'),
 };
-
-// ROLE
-export const USER_ROLE = liquidParser.parse('{{user.custom_fields._ucf_dynamic_user_role}}');
 
 // DATE FORMAT
 export const FORMAT_DATE = liquidParser.parse('{{vars.format-date}}');
