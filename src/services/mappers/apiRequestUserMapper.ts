@@ -1,4 +1,5 @@
-import { ApiUserRequest, UserRequest } from '@modyo-dynamic/modyo-service-business';
+import { ApiUserRequest } from '../api-interface';
+import { UserRequest } from '../interface';
 
 export default function apiUserRequestMapper(userRequest: UserRequest): ApiUserRequest {
   return {

@@ -4,11 +4,11 @@ import {
   DInputSelect,
   useDPortalContext,
 } from '@dynamic-framework/ui-react';
-import { UserRole } from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AvailablePortal } from '../config/widgetConfig';
+import { UserRole } from '../services';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { getRoles, getSelectedRole } from '../store/selectors';
 import { setCreationStep, setSelectedRole } from '../store/slice';

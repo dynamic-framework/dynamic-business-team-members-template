@@ -1,7 +1,5 @@
-import {
-  ApiUserUpdate,
-  UserUpdate,
-} from '@modyo-dynamic/modyo-service-business';
+import { ApiUserUpdate } from '../api-interface';
+import { UserUpdate } from '../interface';
 
 export default function apiUserUpdateMapper(user: UserUpdate): ApiUserUpdate {
   return {

@@ -1,7 +1,8 @@
-import { User, UserRepository } from '@modyo-dynamic/modyo-service-business';
 import { useEffect, useState } from 'react';
 
 import errorHandler from '../../utils/errorHandler';
+import { User } from '../interface';
+import { UserRepository } from '../repositories';
 
 export default function useUserDetailEffect(username: string) {
   const [loading, setLoading] = useState(false);

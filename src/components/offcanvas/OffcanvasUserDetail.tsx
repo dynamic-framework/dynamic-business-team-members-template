@@ -5,16 +5,16 @@ import {
   PortalProps,
   useDPortalContext,
 } from '@dynamic-framework/ui-react';
-import {
-  USER_STATUS_COLOR,
-  UserStatusColor,
-} from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { AvailablePortal } from '../../config/widgetConfig';
 import useGetCountry from '../../hooks/useGetCountry';
 import useWidgetUtils from '../../hooks/useWidgetUtils';
+import {
+  USER_STATUS_COLOR,
+  UserStatusColor,
+} from '../../services';
 import useRolesCallback from '../../services/hooks/useRolesCallback';
 import useUserDetailEffect from '../../services/hooks/useUserDetailEffect';
 import usePermissions from '../../utils/usePermission';

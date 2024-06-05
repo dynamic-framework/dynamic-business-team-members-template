@@ -1,11 +1,13 @@
 import { useDPortalContext, useDToast } from '@dynamic-framework/ui-react';
-import { ApiUserStatus, User, UserRepository } from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch } from '../../store/hooks';
 import { setUserStatus, setWidgetStep } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { ApiUserStatus } from '../api-interface';
+import { User } from '../interface';
+import { UserRepository } from '../repositories';
 
 export default function useUserStatusCallback() {
   const dispatch = useAppDispatch();

@@ -1,10 +1,4 @@
 import { useDPortalContext, useDToast } from '@dynamic-framework/ui-react';
-import {
-  User,
-  UserRepository,
-  UserRole,
-  UserUpdate,
-} from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -12,7 +6,9 @@ import { useDispatch } from 'react-redux';
 import { AvailablePortal } from '../../config/widgetConfig';
 import { clearCreationProcess } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
-import apiUserUpdateMapper from '../utils/apiUserUpdateMapper';
+import { User, UserRole, UserUpdate } from '../interface';
+import apiUserUpdateMapper from '../mappers/apiUserUpdateMapper';
+import { UserRepository } from '../repositories';
 
 export default function useUserUpdateCallback() {
   const [loading, setLoading] = useState(false);

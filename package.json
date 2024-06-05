@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@dynamic-framework/ui-react": "~1.21.0",
-    "@modyo-dynamic/modyo-service-business": "^0.6.1",
+    "@dynamic-framework/ui-react": "^1.24.0",
     "@reduxjs/toolkit": "^1.8.4",
+    "axios": "~1.6.1",
     "classnames": "^2.3.2",
     "formik": "^2.4.5",
     "i18next": "^23.6.0",

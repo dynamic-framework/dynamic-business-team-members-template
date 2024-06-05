@@ -1,10 +1,10 @@
-import { UserRepository } from '@modyo-dynamic/modyo-service-business';
 import { useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getUsers } from '../../store/selectors';
 import { setUsers } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { UserRepository } from '../repositories';
 
 export default function useUsersEffect() {
   const dispatch = useAppDispatch();

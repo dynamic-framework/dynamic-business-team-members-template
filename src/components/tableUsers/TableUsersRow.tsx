@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-key */
 import { DChip } from '@dynamic-framework/ui-react';
-import { USER_STATUS_COLOR } from '@modyo-dynamic/modyo-service-business';
-import type { User, UserStatusColor } from '@modyo-dynamic/modyo-service-business';
 import { useCallback } from 'react';
 import { Cell, Row } from 'react-table';
 
 import useWidgetUtils from '../../hooks/useWidgetUtils';
+import { USER_STATUS_COLOR, User, UserStatusColor } from '../../services';
 
 import TableUsersActions from './TableUsersActions';
 import TableUsersRoleDetail from './TableUsersRoleDetail';

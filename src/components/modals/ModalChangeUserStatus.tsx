@@ -7,7 +7,6 @@ import {
   PortalProps,
   useDPortalContext,
 } from '@dynamic-framework/ui-react';
-import { ApiUserStatus } from '@modyo-dynamic/modyo-service-business';
 import {
   useCallback,
   useEffect,
@@ -16,6 +15,7 @@ import {
 import { useTranslation } from 'react-i18next';
 
 import { AvailablePortal, FORMAT_DATE } from '../../config/widgetConfig';
+import { ApiUserStatus } from '../../services';
 import useStatusEffect from '../../services/hooks/useStatusEffect';
 import useUserStatusCallback from '../../services/hooks/useUserStatusCallback';
 

@@ -1,11 +1,11 @@
 import { useDPortalContext } from '@dynamic-framework/ui-react';
-import { RoleRepository } from '@modyo-dynamic/modyo-service-business';
 import { useCallback, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getRoles } from '../../store/selectors';
 import { setRoles } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
+import { RoleRepository } from '../repositories';
 
 export default function useRolesCallback() {
   const dispatch = useAppDispatch();

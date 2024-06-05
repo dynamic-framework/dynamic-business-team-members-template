@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-key */
 import { DIcon } from '@dynamic-framework/ui-react';
-import { User } from '@modyo-dynamic/modyo-service-business';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { HeaderGroup } from 'react-table';
+
+import { User } from '../../services';
 
 interface Props {
   headerGroups: Array<HeaderGroup<User>>;

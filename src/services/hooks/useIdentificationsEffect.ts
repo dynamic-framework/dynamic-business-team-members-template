@@ -1,7 +1,8 @@
-import { IdentificationRepository, UserIdentificationType } from '@modyo-dynamic/modyo-service-business';
 import { useEffect, useState } from 'react';
 
 import errorHandler from '../../utils/errorHandler';
+import { UserIdentificationType } from '../interface';
+import { IdentificationRepository } from '../repositories';
 
 export default function useIdentificationsEffect(country: string) {
   const [loading, setLoading] = useState(false);

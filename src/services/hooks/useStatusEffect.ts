@@ -1,7 +1,8 @@
-import { StatusRepository, UserStatus } from '@modyo-dynamic/modyo-service-business';
 import { useEffect, useState } from 'react';
 
 import errorHandler from '../../utils/errorHandler';
+import { UserStatus } from '../interface';
+import { StatusRepository } from '../repositories';
 
 export default function useStatusEffect(status: string) {
   const [loading, setLoading] = useState(false);
