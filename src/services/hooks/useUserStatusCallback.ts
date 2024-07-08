@@ -42,21 +42,29 @@ export default function useUserStatusCallback() {
         },
       }));
       setLoading(false);
-      toast(t('toast.changeRoleSuccess', { newStatus: status.status }), {
-        type: 'success',
-        autoClose: 3000,
-        showClose: false,
-      });
+      toast(
+        {
+          title: t('toast.changeRoleSuccess', { newStatus: status.status }),
+          theme: 'success',
+        },
+        {
+          duration: 3000,
+        },
+      );
     } catch (e) {
       errorHandler(e);
 
       setLoading(false);
       closePortal();
-      toast(t('toast.changeRoleError'), {
-        type: 'danger',
-        autoClose: 3000,
-        showClose: false,
-      });
+      toast(
+        {
+          title: t('toast.changeRoleError'),
+          theme: 'danger',
+        },
+        {
+          duration: 3000,
+        },
+      );
     }
   }, [dispatch, closePortal, toast, t]);
 

@@ -40,19 +40,26 @@ export default function useUserUpdateCallback() {
         );
       }
 
-      toast(t('toast.userUpdateSuccess'), {
-        type: 'success',
-        autoClose: 5000,
-      });
+      toast(
+        {
+          title: t('toast.userUpdateSuccess'),
+          theme: 'success',
+        },
+        {
+          duration: 5000,
+        },
+      );
       dispatch(clearCreationProcess());
       closePortal();
       setLoading(false);
     } catch (e) {
       errorHandler(e);
       setLoading(false);
-      toast(t('toast.userUpdateError'), {
-        type: 'danger',
-        autoClose: 5000,
+      toast({
+        title: t('toast.userUpdateError'),
+        theme: 'danger',
+      }, {
+        duration: 5000,
       });
     }
   }, [closePortal, dispatch, t, toast]);

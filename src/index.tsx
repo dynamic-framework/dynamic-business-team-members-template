@@ -45,9 +45,6 @@ root.render(
       </DContextProvider>
       <DToastContainer
         position="bottom-center"
-        style={{
-          '--toastify-toast-width': 'auto',
-        }}
       />
     </Provider>
   </StrictMode>,

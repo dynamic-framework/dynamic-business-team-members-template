@@ -26,11 +26,15 @@ export default function TableUsersActions({ user }: Props) {
 
   const sendInvitationHandler = useCallback(
     () => {
-      toast(t('toast.invitation'), {
-        autoClose: 3000,
-        showClose: false,
-        type: 'success',
-      });
+      toast(
+        {
+          title: t('toast.invitation'),
+          theme: 'success',
+        },
+        {
+          duration: 3000,
+        },
+      );
       setIsOpen(!isOpen);
     },
     [isOpen, t, toast],
