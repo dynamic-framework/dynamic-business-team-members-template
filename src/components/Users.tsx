@@ -25,7 +25,6 @@ export default function Users() {
 
   return (
     <div className="d-flex flex-column gap-3">
-      <p>{t('description')}</p>
       {hasPermission('createMember') && (
         <div className="d-flex justify-content-end">
           <DButton
