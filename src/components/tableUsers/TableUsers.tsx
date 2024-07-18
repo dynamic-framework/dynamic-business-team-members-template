@@ -43,7 +43,7 @@ export default function TableUsers() {
   }
 
   return (
-    <div className="overflow-scroll">
+    <div className="overflow-auto">
       <table
         {...getTableProps()}
         className="w-100"

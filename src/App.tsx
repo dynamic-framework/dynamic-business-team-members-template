@@ -1,6 +1,5 @@
 import { useDContext } from '@dynamic-framework/ui-react';
 import { useEffect, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Init from './components/Init';
 import NewTeamMember from './components/NewTeamMember';
@@ -19,7 +18,6 @@ const VIEW_STEP = {
 
 export default function App() {
   const { setContext } = useDContext();
-  const { t } = useTranslation();
   const step = useAppSelector(getWidgetStep);
 
   useCountriesEffect();
@@ -36,16 +34,7 @@ export default function App() {
 
   return (
     <div className="container pt-3 pb-8">
-      <div className="row">
-        <div className="col-12">
-          <h1 className="fw-bold h4">
-            {t('title')}
-          </h1>
-        </div>
-        <div className="col-12">
-          <CurrentStep />
-        </div>
-      </div>
+      <CurrentStep />
     </div>
   );
 }

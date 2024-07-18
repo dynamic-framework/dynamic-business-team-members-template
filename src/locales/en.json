@@ -1,6 +1,4 @@
 {
-  "title": "Team members",
-  "description": "Here you can create, reinvite, assign a role and set their status.",
   "table": {
     "name": "Name",
     "role": "Role",

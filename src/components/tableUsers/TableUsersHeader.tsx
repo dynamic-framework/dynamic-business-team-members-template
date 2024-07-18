@@ -45,17 +45,17 @@ export default function TableUsersHeader({ headerGroups }: Props) {
       {headerGroups.map((headerGroup) => (
         <tr
           {...headerGroup.getHeaderGroupProps()}
-          className="bg-gray-100 border-bottom border-gray-200"
+          className="bg-gray-50 border-bottom border-gray-100"
         >
           {headerGroup.headers.map((column) => (
             <th
-              className="p-3"
+              className="p-3 fw-bold"
               {...(column.id === 'email')
                 ? { ...column.getHeaderProps() }
                 : { ...column.getHeaderProps(column.getSortByToggleProps()) }}
             >
               <div className="d-flex justify-content-between">
-                <small className="fw-normal flex-grow-1">
+                <small className="flex-grow-1">
                   {column.render('Header')}
                 </small>
                 <span className="text-gray-500">
@@ -65,7 +65,7 @@ export default function TableUsersHeader({ headerGroups }: Props) {
             </th>
           ))}
           <th className="p-3" role="columnheader">
-            <small className="d-block fw-normal text-center">
+            <small className="d-block text-center">
               {t('table.actions')}
             </small>
           </th>
