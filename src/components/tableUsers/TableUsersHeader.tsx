@@ -45,7 +45,7 @@ export default function TableUsersHeader({ headerGroups }: Props) {
       {headerGroups.map((headerGroup) => (
         <tr
           {...headerGroup.getHeaderGroupProps()}
-          className="bg-gray-50 border-bottom border-gray-100"
+          className="border-bottom border-gray-100"
         >
           {headerGroup.headers.map((column) => (
             <th
