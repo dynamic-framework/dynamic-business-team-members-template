@@ -29,17 +29,21 @@ export default function useValidateOtp() {
       setLoading(false);
       close();
       dispatch(clearCreationProcess());
-      toast(t('toast.userCreatedSuccess'), {
-        type: 'success',
-        autoClose: 5000,
+      toast({
+        title: t('toast.userCreatedSuccess'),
+        theme: 'success',
+      }, {
+        duration: 5000,
       });
     } catch (e) {
       errorHandler(e);
       setLoading(false);
       close();
-      toast('toast.userCreatedError', {
-        type: 'danger',
-        autoClose: 5000,
+      toast({
+        title: 'toast.userCreatedError',
+        theme: 'danger',
+      }, {
+        duration: 5000,
       });
     }
   }, [dispatch, requestUser, toast, t]);
