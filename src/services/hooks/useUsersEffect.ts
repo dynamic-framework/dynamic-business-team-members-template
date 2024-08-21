@@ -5,6 +5,7 @@ import { getUsers } from '../../store/selectors';
 import { setUsers } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { UserRepository } from '../repositories';
+import { ApiError } from '../utils';
 
 export default function useUsersEffect() {
   const dispatch = useAppDispatch();
@@ -26,6 +27,8 @@ export default function useUsersEffect() {
         dispatch(setUsers(Users));
         setLoading(false);
       } catch (e) {
+        if ((e as ApiError).name === 'CanceledError') return;
+
         errorHandler(e);
       }
     })();

@@ -5,6 +5,7 @@ import { getCountriesPhone } from '../../store/selectors';
 import { setCountriesPhone } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { CountryRepository } from '../repositories';
+import { ApiError } from '../utils';
 
 export default function useCountriesPhoneEffect() {
   const dispatch = useAppDispatch();
@@ -24,6 +25,8 @@ export default function useCountriesPhoneEffect() {
         dispatch(setCountriesPhone(data));
         setLoading(false);
       } catch (e) {
+        if ((e as ApiError).name === 'CanceledError') return;
+
         errorHandler(e);
       }
     })();

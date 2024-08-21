@@ -5,6 +5,7 @@ import { getCountries } from '../../store/selectors';
 import { setCountries } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { CountryRepository } from '../repositories';
+import { ApiError } from '../utils';
 
 export default function useCountriesEffect() {
   const dispatch = useAppDispatch();
@@ -24,6 +25,8 @@ export default function useCountriesEffect() {
         dispatch(setCountries(data));
         setLoading(false);
       } catch (e) {
+        if ((e as ApiError).name === 'CanceledError') return;
+
         errorHandler(e);
       }
     })();

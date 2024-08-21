@@ -21,10 +21,8 @@ import { AvailablePortal } from './config/widgetConfig';
 import reportWebVitals from './reportWebVitals';
 import store from './store/store';
 
-if (process.env.NODE_ENV === 'development') {
-  require('@dynamic-framework/ui-react/dist/css/dynamic-ui.css');
-}
-require('./styles/base.scss');
+import '@dynamic-framework/ui-react/dist/css/dynamic-ui.css';
+import './styles/base.scss';
 
 const root = createRoot(document.getElementById('teamMembers') as Element);
 root.render(

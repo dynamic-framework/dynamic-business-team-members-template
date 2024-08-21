@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../store/hooks';
 import { setPermissions, setWidgetStep } from '../../store/slice';
 import errorHandler from '../../utils/errorHandler';
 import { UserRepository } from '../repositories';
+import { ApiError } from '../utils';
 
 export default function usePermissionsEffect() {
   const dispatch = useAppDispatch();
@@ -22,6 +23,8 @@ export default function usePermissionsEffect() {
         dispatch(setPermissions(data.permissions));
         dispatch(setWidgetStep('list'));
       } catch (e) {
+        if ((e as ApiError).name === 'CanceledError') return;
+
         errorHandler(e);
       }
     })();
