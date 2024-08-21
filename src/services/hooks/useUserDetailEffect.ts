@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import errorHandler from '../../utils/errorHandler';
 import { User } from '../interface';
 import { UserRepository } from '../repositories';
+import { ApiError } from '../utils';
 
 export default function useUserDetailEffect(username: string) {
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,8 @@ export default function useUserDetailEffect(username: string) {
         setLoading(false);
         setUser(data);
       } catch (e) {
-        setLoading(false);
+        if ((e as ApiError).name === 'CanceledError') return;
+
         errorHandler(e);
       }
     })();

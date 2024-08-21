@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import errorHandler from '../../utils/errorHandler';
 import { UserStatus } from '../interface';
 import { StatusRepository } from '../repositories';
+import { ApiError } from '../utils';
 
 export default function useStatusEffect(status: string) {
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,8 @@ export default function useStatusEffect(status: string) {
         setLoading(false);
         setStatusList(data);
       } catch (e) {
-        setLoading(false);
+        if ((e as ApiError).name === 'CanceledError') return;
+
         errorHandler(e);
       }
     })();
