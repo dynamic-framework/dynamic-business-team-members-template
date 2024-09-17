@@ -1,15 +1,13 @@
-import { useTranslation } from 'react-i18next';
-
 import useUsersEffect from '../services/hooks/useUsersEffect';
 
 import ListUserItem from './ListUserItem';
+import UsersLoader from './loaders/UsersLoader';
 
 export default function ListUsers() {
   const { loading, users } = useUsersEffect();
-  const { t } = useTranslation();
 
   if (loading) {
-    return <>{t('actions.loading')}</>;
+    return <UsersLoader />;
   }
   return (
     <div>

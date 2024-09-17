@@ -18,6 +18,7 @@ import { AvailablePortal, FORMAT_DATE } from '../../config/widgetConfig';
 import { ApiUserStatus } from '../../services';
 import useStatusEffect from '../../services/hooks/useStatusEffect';
 import useUserStatusCallback from '../../services/hooks/useUserStatusCallback';
+import ModalChangeStatusLoader from '../loaders/ModalChangeStatusLoader';
 
 export default function ModalChangeUserStatus(
   {
@@ -56,17 +57,7 @@ export default function ModalChangeUserStatus(
   }, [statusList]);
 
   if (loadingStatus) {
-    return (
-      <DModal
-        name="modalChangeUserStatus"
-        className="d-block"
-        centered
-      >
-        <DModal.Body className="py-4 px-5">
-          {t('actions.loading')}
-        </DModal.Body>
-      </DModal>
-    );
+    return (<ModalChangeStatusLoader />);
   }
 
   return (
@@ -95,10 +86,7 @@ export default function ModalChangeUserStatus(
             onChange={(e) => setNewStatus(e)}
           />
           <div>
-            <DAlert
-              type="warning"
-              soft
-            >
+            <DAlert theme="warning">
               {newStatus?.description}
             </DAlert>
           </div>

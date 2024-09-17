@@ -1,23 +1,28 @@
-import { DButton, DOffcanvas } from '@dynamic-framework/ui-react';
-import { useTranslation } from 'react-i18next';
+import { DOffcanvas } from '@dynamic-framework/ui-react';
 
 export default function UserDetailLoader() {
-  const { t } = useTranslation();
   return (
     <DOffcanvas
-      name="userDetail"
+      name="userDetailLoading"
       openFrom="end"
     >
       <DOffcanvas.Body className="p-4">
-        <h5 className="fw-bold">
-          {t('actions.loading')}
-        </h5>
-        <div className="text-center">
-          <DButton
-            theme="secondary"
-            variant="link"
-            loading
-            size="lg"
+        <div className="placeholder-glow d-flex flex-column">
+          <span
+            className="placeholder bg-secondary-200 w-100 mb-1"
+            style={{ height: '2lh' }}
+          />
+          <span
+            className="placeholder bg-secondary-200 w-100 mb-1"
+            style={{ height: '4lh' }}
+          />
+          <span
+            className="placeholder bg-secondary-200 w-100 mb-1"
+            style={{ height: '4lh' }}
+          />
+          <span
+            className="placeholder bg-secondary-200 w-100 mb-1"
+            style={{ height: '4lh' }}
           />
         </div>
       </DOffcanvas.Body>
