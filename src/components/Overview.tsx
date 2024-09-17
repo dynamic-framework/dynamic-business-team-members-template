@@ -8,8 +8,14 @@ import useGetCountryPhone from '../hooks/useGetCountryPhone';
 import useIdentificationsEffect from '../services/hooks/useIdentificationsEffect';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { getRequestUser, getSelectedRole } from '../store/selectors';
-import { setCreationStep } from '../store/slice';
+import {
+  setCreationStep,
+  setRequestUser,
+  setSelectedRole,
+  setWidgetStep,
+} from '../store/slice';
 
+import NewUserLoader from './loaders/NewUserLoader';
 import UserDetailField from './UserDetailField';
 
 export default function Overview() {
@@ -85,17 +91,7 @@ export default function Overview() {
                   />
                 </div>
                 <hr className="w-100 m-0" />
-                {loading ? (
-                  <div className="d-flex justify-content-center">
-                    <div
-                      className="spinner-border text-secondary"
-                      role="status"
-                      style={{ width: 100, height: 100, borderWidth: '1rem' }}
-                    >
-                      <span className="visually-hidden">Loading...</span>
-                    </div>
-                  </div>
-                ) : (
+                {loading ? (<NewUserLoader />) : (
                   <div className="d-flex align-items-start gap-3">
                     <div className="d-flex flex-column gap-3 flex-grow-1">
                       <UserDetailField
@@ -147,8 +143,11 @@ export default function Overview() {
             text={t('actions.cancel')}
             variant="link"
             theme="secondary"
-            pill
-            onClick={() => { }}
+            onClick={() => {
+              dispatch(setWidgetStep('list'));
+              dispatch(setRequestUser(undefined));
+              dispatch(setSelectedRole(undefined));
+            }}
           />
         </div>
       </div>

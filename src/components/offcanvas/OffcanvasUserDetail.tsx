@@ -70,7 +70,6 @@ export default function OffcanvasUserDetail(
       </DOffcanvas.Header>
       <DOffcanvas.Body>
         <div className="d-flex flex-column gap-3">
-          <hr className="w-100 m-0 border-dashed" />
           <h6>
             Username:
             {' '}

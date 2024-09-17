@@ -8,6 +8,7 @@ import {
 
 import { User } from '../../services';
 import useUsersEffect from '../../services/hooks/useUsersEffect';
+import UsersLoader from '../loaders/UsersLoader';
 
 import TablePaymentDetailHeader from './TableUsersHeader';
 import TablePaymentDetailRow from './TableUsersRow';
@@ -39,7 +40,7 @@ export default function TableUsers() {
   );
 
   if (loading) {
-    return <>{t('actions.loading')}</>;
+    return <UsersLoader />;
   }
 
   return (
