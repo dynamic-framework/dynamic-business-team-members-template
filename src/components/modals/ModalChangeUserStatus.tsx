@@ -57,7 +57,7 @@ export default function ModalChangeUserStatus(
   }, [statusList]);
 
   if (loadingStatus) {
-    return (<ModalChangeStatusLoader />);
+    return <ModalChangeStatusLoader />;
   }
 
   return (
