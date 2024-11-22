@@ -6,13 +6,13 @@ export default function ModalChangeStatusLoader() {
       name="modalChangeUserStatus"
       centered
     >
-      <DModal.Body className="placeholder-wave py-4 px-5">
+      <DModal.Body className="placeholder-glow py-4 px-5">
         <span
           className="placeholder rounded-1 w-100 mb-1"
           style={{ height: '4lh' }}
         />
       </DModal.Body>
-      <DModal.Footer className="placeholder-wave">
+      <DModal.Footer className="placeholder-glow">
         <span
           className="placeholder rounded-pill col-6 mb-1"
           style={{ height: '2lh' }}
