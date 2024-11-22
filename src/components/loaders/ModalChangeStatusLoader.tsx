@@ -8,13 +8,13 @@ export default function ModalChangeStatusLoader() {
     >
       <DModal.Body className="placeholder-wave py-4 px-5">
         <span
-          className="placeholder bg-secondary-200 rounded-1 w-100 mb-1"
+          className="placeholder rounded-1 w-100 mb-1"
           style={{ height: '4lh' }}
         />
       </DModal.Body>
       <DModal.Footer className="placeholder-wave">
         <span
-          className="placeholder bg-secondary-200 rounded-pill col-6 mb-1"
+          className="placeholder rounded-pill col-6 mb-1"
           style={{ height: '2lh' }}
         />
         <span

@@ -9,19 +9,19 @@ export default function UserDetailLoader() {
       <DOffcanvas.Body className="p-4">
         <div className="placeholder-glow d-flex flex-column">
           <span
-            className="placeholder bg-secondary-200 w-100 mb-1"
+            className="placeholder w-100 mb-1"
             style={{ height: '2lh' }}
           />
           <span
-            className="placeholder bg-secondary-200 w-100 mb-1"
+            className="placeholder w-100 mb-1"
             style={{ height: '4lh' }}
           />
           <span
-            className="placeholder bg-secondary-200 w-100 mb-1"
+            className="placeholder w-100 mb-1"
             style={{ height: '4lh' }}
           />
           <span
-            className="placeholder bg-secondary-200 w-100 mb-1"
+            className="placeholder w-100 mb-1"
             style={{ height: '4lh' }}
           />
         </div>
