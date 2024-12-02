@@ -37,6 +37,8 @@ import {
   setCreationStep,
   setIdentifications,
   setRequestUser,
+  setSelectedRole,
+  setWidgetStep,
 } from '../store/slice';
 
 const newUserSchema = yup.object().shape({
@@ -312,14 +314,17 @@ export default function TeamMemberInformation() {
                 className="mx-auto"
                 text={t('actions.continue')}
                 type="submit"
-                pill
               />
               <DButton
                 className="mx-auto"
                 text={t('actions.cancel')}
-                pill
                 variant="link"
                 theme="secondary"
+                onClick={() => {
+                  dispatch(setWidgetStep('list'));
+                  dispatch(setRequestUser(undefined));
+                  dispatch(setSelectedRole(undefined));
+                }}
               />
             </div>
           </div>

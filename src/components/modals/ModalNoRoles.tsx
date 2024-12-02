@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 export default function ModalNoRoles() {
   const { t } = useTranslation();
   const { closePortal } = useDPortalContext();
+
   return (
     <DModal
       name="modalNoRoles"
